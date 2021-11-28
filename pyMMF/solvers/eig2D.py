@@ -150,13 +150,11 @@ def solve_eig(
                 modes.profiles[-1] /= spnorm(modes.profiles[-1], ord=2)
                 # is the mode a propagative one?
                 modes.propag.append((betasq > beta_min**2 and betasq < beta_max**2))
-                
+
         logger.info("Solver found %g modes is %0.2f seconds." % (modes.number,time.time()-t0))
-        
+
         if (nmodesMax == modes.number):
             logger.warning('The solver reached the maximum number of modes set.')
             logger.warning('Some propagating modes may be missing.')
-        
-
 
         return modes
